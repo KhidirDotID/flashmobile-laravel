@@ -1,0 +1,61 @@
+{
+    "name": "khidirdotid/flashmobile-laravel",
+    "type": "library",
+    "description": "A Flash Mobile Wrapper for Laravel",
+    "keywords": [
+        "flashmobile",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Khidir Zahid",
+            "email": "khidirdotid@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^8.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KhidirDotID\\FlashMobile\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KhidirDotID\\FlashMobile\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KhidirDotID\\FlashMobile\\Providers\\FlashMobileServiceProvider"
+            ],
+            "aliases": {
+                "FlashMobile": "KhidirDotID\\FlashMobile\\Facades\\FlashMobile"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "funding": [
+        {
+            "type": "saweria",
+            "url": "https://saweria.co/khidirdotid"
+        }
+    ]
+}
