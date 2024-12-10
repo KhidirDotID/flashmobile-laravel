@@ -50,8 +50,8 @@ A Flash Mobile Wrapper for Laravel
         $payment = \FlashMobile::createQRPayment($data);
 
         // Combine with QR Generator Package. e.g: simplesoftwareio/simple-qrcode
-        $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::generate($payment['qr_status']);
-        echo '<img src="data:image/svg+xml;base64,{{ base64_encode($qrCode) }}" class="qrcode">';
+        $qrCode = \SimpleSoftwareIO\QrCode\Facades\QrCode::generate($payment['qr_string']);
+        echo '<img src="data:image/svg+xml;base64,{{ base64_encode($qrCode) }}">';
     } catch (\Throwable $th) {
         throw $th;
     }

@@ -12,16 +12,16 @@ class FlashMobile
     }
 
     // Flash Mobile Base Url
-    protected $baseUrl;
+    protected static $baseUrl;
 
     // Flash Mobile Client Id
-    protected $clientId;
+    protected static $clientId;
 
     // Flash Mobile Secret Key
-    protected $secretKey;
+    protected static $secretKey;
 
     // Flash Mobile Auth Token
-    protected $token;
+    protected static $token;
 
     public static function registerFlashMobileConfig()
     {
