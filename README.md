@@ -70,7 +70,7 @@ A Flash Mobile Wrapper for Laravel
         try {
             $response = \FlashMobile::getPaymentStatus($request->transaction_id);
 
-            if (strtolower($response['status'] == 'success') {
+            if (strtolower($response['status']) == 'success') {
                 // TODO: Set payment status in merchant's database to 'success'
             }
         } catch (\Throwable $th) {
