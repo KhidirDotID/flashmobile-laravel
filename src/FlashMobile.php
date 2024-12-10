@@ -56,9 +56,20 @@ class FlashMobile
 
     public static function generateAuth(): string|null
     {
+        $clientId = self::$clientId;
+        $secretKey = self::$secretKey;
+
+        if (!$clientId) {
+            throw new \Exception('Client ID is required.');
+        }
+
+        if (!$secretKey) {
+            throw new \Exception('Secret Key is required.');
+        }
+
         $auth = Http::post(self::$baseUrl . '/priv/v1/pg/token', [
-            'client_key' => self::$clientId,
-            'server_key' => self::$secretKey
+            'client_key' => $clientId,
+            'server_key' => $secretKey
         ]);
 
         if ($auth->successful()) {
