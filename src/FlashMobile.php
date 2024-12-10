@@ -121,7 +121,12 @@ class FlashMobile
      */
     public static function getPaymentStatus($transactionId): array
     {
-        $paymentStatus = Http::get(self::$baseUrl . '/payment/api/v1/qris/payment-status/' . $transactionId);
+        $token = self::generateAuth();
+
+        $paymentStatus = Http::withHeaders([
+            'Content-Type'  => 'application/json',
+            'Authorization' => 'Bearer ' . $token
+        ])->get(self::$baseUrl . '/payment/api/v1/qris/payment-status/' . $transactionId);
 
         return $paymentStatus->json('data');
     }
